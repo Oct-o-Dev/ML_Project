@@ -1,71 +1,71 @@
-📊 Sales Prediction App
+# 📊 Sales Prediction App
+
 An end-to-end mobile application that predicts sales for retail items using machine learning. Users can input product and outlet details, and the app returns the expected sales value.
 
-🔗 Live Backend Endpoint
-https://sales-predictor-5kqf.onrender.com/predict
+### 🔗 Live Backend Endpoint
 
-🚀 Features
-📱 Mobile App UI built using React Native
+> https://sales-predictor-5kqf.onrender.com/predict
 
-⚙️ Machine Learning model (CatBoost) trained on retail data
+---
 
-🌐 FastAPI Backend serving the trained model through a REST API
+## 🚀 Features
 
-📦 Form-based input interface with dropdowns and validation
+- 📱 **Mobile App UI** built using React Native  
+- ⚙️ **Machine Learning model (CatBoost)** trained on retail data  
+- 🌐 **FastAPI Backend** serving the trained model through a REST API  
+- 📦 **Form-based input interface** with dropdowns and validation  
+- 🔍 Real-time **prediction of sales** based on multiple features  
 
-🔍 Real-time prediction of sales based on multiple features
+---
 
-🧠 Machine Learning
-Model: CatBoost Regressor
+## 🧠 Machine Learning
 
-Trained on retail data with features like:
+- Model: **CatBoost Regressor**
+- Trained on retail data with features like:
+  - Item Weight, MRP, Visibility
+  - Fat Content, Item Type
+  - Outlet Identifier, Size, Location, Establishment Year, and Type
+- Saved as: `Sales_Predictor.cbm`
+- Feature names stored in: `feature_names.pkl`
 
-Item Weight, MRP, Visibility
+---
 
-Fat Content, Item Type
+## 🏗️ Tech Stack
 
-Outlet Identifier, Size, Location, Establishment Year, and Type
+| Layer       | Technology       |
+|-------------|------------------|
+| Frontend    | React Native     |
+| Backend     | FastAPI          |
+| ML Model    | CatBoost         |
+| API Calls   | Axios            |
+| Hosting     | Render           |
 
-Saved as: Sales_Predictor.cbm
+---
 
-Feature names stored in: feature_names.pkl
+## 📱 React Native UI
 
-🏗️ Tech Stack
-Layer	Technology
-Frontend	React Native
-Backend	FastAPI
-ML Model	CatBoost
-API Calls	Axios
-Hosting	Render
+- Clean form with inputs for:
+  - Text fields: Weight, MRP, Visibility, Year
+  - Dropdowns: Fat Content, Item Type, Outlet details
+- Handles validations and formatting
+- Sends API request to backend using `axios.post`
+- Displays predicted sales in-app
 
-📱 React Native UI
-Clean form with inputs for:
+---
 
-Text fields: Weight, MRP, Visibility, Year
+## ⚙️ FastAPI Backend
 
-Dropdowns: Fat Content, Item Type, Outlet details
+- Uses Pydantic for input validation
+- Loads CatBoost model from `.cbm` file
+- Accepts JSON requests
+- Returns prediction as a formatted string
+- Includes root health-check route
 
-Handles validations and formatting
+---
 
-Sends API request to backend using axios.post
+## 📂 Project Structure
 
-Displays predicted sales in-app
-
-⚙️ FastAPI Backend
-Uses Pydantic for input validation
-
-Loads CatBoost model from .cbm file
-
-Accepts JSON requests
-
-Returns prediction as a formatted string
-
-Includes root health-check route
-
-📂 Project Structure
-bash
-Copy
-Edit
+```
 root/
 │
 ├── backend/
@@ -77,27 +77,35 @@ root/
 │   └── PriceForm.js            # React Native form component
 │
 └── README.md                   # This file
-🧪 How to Run Locally
-Backend (FastAPI)
-bash
-Copy
-Edit
+```
+
+---
+
+## 🧪 How to Run Locally
+
+### Backend (FastAPI)
+
+```bash
 cd backend
 pip install fastapi uvicorn catboost pydantic pandas
 uvicorn main:app --reload
-Frontend (React Native)
-bash
-Copy
-Edit
+```
+
+### Frontend (React Native)
+
+```bash
 cd frontend
 npm install
 npx react-native run-android   # or run-ios
-📬 Sample API Request
-POST /predict
+```
 
-json
-Copy
-Edit
+---
+
+## 📬 Sample API Request
+
+**POST** `/predict`
+
+```json
 {
   "Item_Weight": 9.3,
   "Item_Fat_Content": "Low Fat",
@@ -110,24 +118,30 @@ Edit
   "Outlet_Location_Type": "Tier 2",
   "Outlet_Type": "Supermarket Type1"
 }
-Response
+```
 
-json
-Copy
-Edit
+**Response**
+
+```json
 {
   "prediction": "Predicted Sales: 3450.28"
 }
-📌 Future Improvements
-Add user authentication
+```
 
-Store prediction history
+---
 
-Improve model accuracy with more data
+## 📌 Future Improvements
 
-Upload CSV file for bulk predictions
+- Add user authentication
+- Store prediction history
+- Improve model accuracy with more data
+- Upload CSV file for bulk predictions
 
-🧑‍💻 Author
-👋 Built with ❤️ by [Your Name]
-📧 Contact: [your.email@example.com]
-📍 NIT Surat | Electronics & Communication Engineering
+---
+
+## 🧑‍💻 Author
+
+> 👋 Built with ❤️ by [Abhineet , Jay Shah , Kaushal Pawar]  
+> 📧 Contact: [abhineetk213@gmail.com]  
+> 📍 NIT Surat | Electronics & Communication Engineering
+
